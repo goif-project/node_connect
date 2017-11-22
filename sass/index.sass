@@ -1,0 +1,41 @@
+@mixin user_wrap_width($class_number)
+  .user_wrap
+    width: (100%/$class_number)
+*
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+html,body
+  height: 100%
+
+.sp
+  width: 100%
+
+.first
+  @include user_wrap_width(1)
+.second
+  @include user_wrap_width(2)
+.third
+  @include user_wrap_width(3)
+.fourth
+  @include user_wrap_width(4)
+.default
+  @include user_wrap_width(1)
+
+#display_wrap
+  width: 100%
+  height: 100%
+  .user_wrap
+    height: 100%
+    display: inline-flex
+    flex-direction: row
+    background: #00f
+    &:nth-child(even)
+      background: #f0f
+    &:not(:last-child)
+      border-right: 10px solid #000
+      box-sizing: border-box

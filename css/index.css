@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html, body {
+  height: 100%;
+}
+
+.sp {
+  width: 100%;
+}
+
+.first .user_wrap {
+  width: 100%;
+}
+
+.second .user_wrap {
+  width: 50%;
+}
+
+.third .user_wrap {
+  width: 33.33333%;
+}
+
+.fourth .user_wrap {
+  width: 25%;
+}
+
+.default .user_wrap {
+  width: 100%;
+}
+
+#display_wrap {
+  width: 100%;
+  height: 100%;
+}
+#display_wrap .user_wrap {
+  height: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  background: #00f;
+}
+#display_wrap .user_wrap:nth-child(even) {
+  background: #f0f;
+}
+#display_wrap .user_wrap:not(:last-child) {
+  border-right: 10px solid #000;
+  box-sizing: border-box;
+}
