@@ -1,8 +1,11 @@
-var socket = io.connect();
-var $count = $('#count');
-var count_arrow = ['first','second','third','fourth','default'];
-var id_name = $('#display_wrap');
-var width=window.innerWidth;
+const socket = io.connect();
+const $count = $('#count');
+const count_arrow = ['first','second','default'];
+const id_name = $('#display_wrap');
+const width=window.innerWidth;
+var contents_open = false;
+
+console.log(width);
 
 //接続時の処理
 socket.on('count', function(data) {
@@ -16,9 +19,10 @@ socket.on('disconnect', function(data){
   if(width >= 768){
     id_name.removeClass(count_arrow[data]);
     id_name.addClass(count_arrow[data - 1]);
+    $("#user_connect").text(data);
   }
-  $('#user' + data_plus).remove();
   if(data == 0){
+    $('#user' + data_plus).remove();
     str = top_contents_wrap();
     id_name.append(str);
   }
@@ -33,8 +37,11 @@ function display_contents(connect_count){
   if(width >= 768){
     for(i=1;i<count_arrow.length;i++){
       if(i == connect_count){
-        str = html_contents_wrap(i);
-        id_name.append(str);
+        if(contents_open == false){
+          str = html_contents_wrap(i);
+          id_name.append(str);
+        }
+        $("#user_connect").text(connect_count);
         id_name.addClass(count_arrow[i - 1]);
         open = true;
       }else{
@@ -46,12 +53,12 @@ function display_contents(connect_count){
       id_name.append(str);
     }
   }else{
-    str = html_contents_wrap(connect_count);
+    str = sp_html_contents_wrap(connect_count);
     console.log('#user'+connect_count);
     id_name.append(str);
-    $('#user'+connect_count).addClass('sp');
     listitems = $('#user'+connect_count);
-    index = $('.user_wrap').index(listitems);
+    index = $('#user_wrap').index(listitems);
+    console.log(index);
     if(index != 0){
       $('#user' + connect_count).remove();
     }
@@ -61,11 +68,13 @@ function display_contents(connect_count){
 function html_contents_wrap(number){
   str = ''
   str += '<div id="user'+number+'" class="user_wrap">';
-  str += '追加されました:user'+number;
+  str += '追加されました:只今の人数は';
+  str += '<span id="user_connect"></span>人です';
   str += '</div>';
   // str += '';
   // str += '';
   // str += '';
+  contents_open = true;
   return str;
 }
 
@@ -75,5 +84,18 @@ function top_contents_wrap(){
   // str += '';
   // str += '';
   // str += '';
+  return str;
+}
+
+function sp_html_contents_wrap(number){
+  str = ''
+  str += '<div id="user_sp" class="user_wrap sp"';
+  str += 'あなたはユーザ';
+  str += '<span id="user_connect">'+number+'</span>です';
+  str += '</div>';
+  // str += '';
+  // str += '';
+  // str += '';
+  contents_open = true;
   return str;
 }
