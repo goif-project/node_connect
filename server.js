@@ -13,7 +13,7 @@ var mime = {
 var http_server = new http.createServer(function(req, res) {
   // console.log(req.url);
   if (req.url == '/') {
-    filePath = '/load.html';
+    filePath = '/index.html';
   } else {
     filePath = req.url;
   }

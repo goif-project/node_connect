@@ -5,8 +5,6 @@ const id_name = $('#display_wrap');
 const width=window.innerWidth;
 var contents_open = false;
 
-console.log(width);
-
 //接続時の処理
 socket.on('count', function(data) {
     // $count.text(data);
@@ -54,11 +52,9 @@ function display_contents(connect_count){
     }
   }else{
     str = sp_html_contents_wrap(connect_count);
-    console.log('#user'+connect_count);
     id_name.append(str);
     listitems = $('#user'+connect_count);
     index = $('#user_wrap').index(listitems);
-    console.log(index);
     if(index != 0){
       $('#user' + connect_count).remove();
     }
