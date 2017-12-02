@@ -1,3 +1,15 @@
+class H1H1 extends React.Component{
+  render(){
+    return(
+      <div>
+        <TestCode />
+        <h1 className="ttttt">
+          ゴルフゴルフゴルフ
+        </h1>
+      </div>
+    )
+  }
+}
 class TestCode extends React.Component{
   render(){
     return(
@@ -11,6 +23,6 @@ class TestCode extends React.Component{
 }
 
 ReactDOM.render(
-  <TestCode />,
+  <H1H1 />,
   document.getElementById('app')
-);
+)
