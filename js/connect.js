@@ -21,8 +21,7 @@ socket.on('disconnect', function(data){
   }
   if(data == 0){
     $('#user' + data_plus).remove();
-    str = top_contents_wrap();
-    id_name.append(str);
+    no_connect();
   }
 });
 
@@ -31,6 +30,7 @@ function display_contents(connect_count){
   var open = false;
   if(connect_count != 0){
     $("#user0").remove();
+    id_name.removeClass(count_arrow[2]);
   }
   if(width >= 768){
     for(i=1;i<count_arrow.length;i++){
@@ -47,18 +47,23 @@ function display_contents(connect_count){
       }
     }
     if(open == false){
-      str = top_contents_wrap();
-      id_name.append(str);
+      no_connect();
     }
   }else{
     str = sp_html_contents_wrap(connect_count);
     id_name.append(str);
     listitems = $('#user'+connect_count);
-    index = $('#user_wrap').index(listitems);
+    index = $('.user_wrap').index(listitems);
     if(index != 0){
       $('#user' + connect_count).remove();
     }
   }
+}
+
+function no_connect(){
+  str = top_contents_wrap();
+  id_name.append(str);
+  id_name.addClass(count_arrow[2]);
 }
 
 function html_contents_wrap(number){
@@ -76,16 +81,17 @@ function html_contents_wrap(number){
 
 function top_contents_wrap(){
   str = ''
-  str += '<div id="user0" class="default">繋がってない</div>';
+  str += '<div id="user0">繋がってない</div>';
   // str += '';
   // str += '';
   // str += '';
+  contents_open = false;
   return str;
 }
 
 function sp_html_contents_wrap(number){
   str = ''
-  str += '<div id="user_sp" class="user_wrap sp"';
+  str += '<div id="user'+number+'" class="user_wrap sp">';
   str += 'あなたはユーザ';
   str += '<span id="user_connect">'+number+'</span>です';
   str += '</div>';
