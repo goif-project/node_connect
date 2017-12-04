@@ -1,6 +1,24 @@
+* { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+html, body { height: 100%; }
+
+.sp_w { width: 100%; }
+
+.sp { display: none !important; }
+
+.pc { display: block !important; }
+
+.txC { text-align: center; }
+
+#main_wrap { width: 100%; height: 100%; background: #0ff; position: relative; }
+#main_wrap .test_btn { position: absolute; top: 0; right: 0; }
+
+@media screen and (max-width: 767px) { .sp { display: block !important; }
+  .pc { display: none !important; } }
 .first .user_wrap { width: 100%; }
 
 .second .user_wrap { width: 100%; }
 
-#display_wrap { width: 100%; background: #0f0; }
-#display_wrap .user_wrap { display: inline-flex; flex-direction: row; }
+#main_wrap .h1_wrap { font-size: 8vw; padding: 10% 0 0; }
+#main_wrap .user_wrap { font-size: 3vw; padding: 4% 0 0; }
+#main_wrap .pc_connect { display: block; text-decoration: none; color: #fff; width: 30%; height: 20%; margin: 5% auto 0; padding: 2%; border-radius: 60px; background: #00f; font-size: 3vw; cursor: pointer; }

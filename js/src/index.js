@@ -1,28 +1,19 @@
-class H1H1 extends React.Component{
+class App_start extends React.Component{
   render(){
     return(
       <div>
-        <TestCode />
-        <h1 className="ttttt">
-          ゴルフゴルフゴルフ
-        </h1>
-      </div>
-    )
-  }
-}
-class TestCode extends React.Component{
-  render(){
-    return(
-      <div>
-        <h1 className="henko">
-          Hello World !!
-        </h1>
+        <div className="henko">
+          <a className="pc pc_connect" href="page2.html">
+            START
+          </a>
+        </div>
       </div>
     )
   }
 }
 
+
 ReactDOM.render(
-  <H1H1 />,
+  <App_start />,
   document.getElementById('app')
 )

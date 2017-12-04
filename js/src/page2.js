@@ -19,7 +19,7 @@ var Result = React.createClass({
 
 var Main = React.createClass({
   getInitialState: function(){
-    return {counter: 0};
+    return {counter: 1};
   },
 	//ボタンがクリックされたら
   handleClick: function(increment){
@@ -27,13 +27,22 @@ var Main = React.createClass({
   },
   render: function(){
     return(
-      <div>
-        <Button localHandleClick={this.handleClick} increment={1} />
-        <Button localHandleClick={this.handleClick} increment={2} />
-        <Button localHandleClick={this.handleClick} increment={3} />
-        <Button localHandleClick={this.handleClick} increment={4} />
-        <Result localCounter={this.state.counter} />
-				<a href="page3.html?id={this.state.counter}">リンク</a>
+      <div className="char_set">
+        <div className="result_wrap">
+          <Result localCounter={this.state.counter} />
+        </div>
+        <div className="btn_wrap">
+          <Button localHandleClick={this.handleClick} increment={1} />
+          <Button localHandleClick={this.handleClick} increment={2} />
+          <Button localHandleClick={this.handleClick} increment={3} />
+          <Button localHandleClick={this.handleClick} increment={4} />
+        </div>
+        <form action="page3.html" method="post">
+          <input type="hidden" name="counter_num" value={this.state.counter} />
+          <button className="sp sp_connect" type="submit" onclick="getData()" name="coutner_btn">
+            送信
+          </button>
+        </form>
       </div>
     );
   }

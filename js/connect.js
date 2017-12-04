@@ -69,8 +69,7 @@ function no_connect(){
 function html_contents_wrap(number){
   str = ''
   str += '<div id="user'+number+'" class="user_wrap">';
-  str += '追加されました:只今の人数は';
-  str += '<span id="user_connect"></span>人です';
+  str += '<span id="user_connect"></span>人接続済み';
   str += '</div>';
   // str += '';
   // str += '';
@@ -81,7 +80,7 @@ function html_contents_wrap(number){
 
 function top_contents_wrap(){
   str = ''
-  str += '<div id="user0">繋がってない</div>';
+  str += '<div id="user0" class="user_wrap">接続してください</div>';
   // str += '';
   // str += '';
   // str += '';
@@ -91,7 +90,7 @@ function top_contents_wrap(){
 
 function sp_html_contents_wrap(number){
   str = ''
-  str += '<div id="user'+number+'" class="user_wrap sp">';
+  str += '<div id="user'+number+'" class="user_wrap sp_w">';
   str += 'あなたはユーザ';
   str += '<span id="user_connect">'+number+'</span>です';
   str += '</div>';

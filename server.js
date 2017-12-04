@@ -44,6 +44,8 @@ io.sockets.on('connection', function(socket) {
     io.sockets.emit('disconnect', connect_count);
   });
 });
+
+//ここからMySQL
 const mysql      = require('mysql');
 const connection = mysql.createConnection({
     host     : 'localhost',
@@ -52,7 +54,6 @@ const connection = mysql.createConnection({
     database : 'node_test'
 });
 
-//ここからMySQLアクセス
 connection.connect();
 
 let sql = 'select * from t_user';
@@ -61,3 +62,13 @@ connection.query(sql, (err, rows, fields) => {
 });
 
 connection.end();
+
+
+//postのデータ取得
+var express = require("express");
+var app = express();
+app.post('/post', function(req, res) {
+    req.on('data', function(chunk) {
+      console.log(chunk);
+    });
+});
