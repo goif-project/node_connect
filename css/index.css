@@ -21,4 +21,5 @@ html, body { height: 100%; }
 
 #main_wrap .h1_wrap { font-size: 8vw; padding: 10% 0 0; }
 #main_wrap .user_wrap { font-size: 3vw; padding: 4% 0 0; }
-#main_wrap .pc_connect { display: block; text-decoration: none; color: #fff; width: 30%; height: 20%; margin: 5% auto 0; padding: 2%; border-radius: 60px; background: #00f; font-size: 3vw; cursor: pointer; }
+#main_wrap .pc_connect { display: block; text-decoration: none; color: #fff; width: 30%; height: 20%; margin: 5% auto 0; padding: 2%; border-radius: 60px; background: #00f; font-size: 3vw; cursor: pointer; box-sizing: border-box; }
+@media screen and (max-width: 767px) { #main_wrap .pc_connect { width: 60%; padding: 5%; } }
