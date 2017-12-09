@@ -5,7 +5,7 @@
 nodeを使って、現在ログインしている(urlに入っている)人の人数をカウントする<br>
 1台のpcと最大4台のspを使う。<br>
 1台のみ → 繋がってないと表示<br>
-2-5台(sp1-4) → spの接続台数に応じてpcの画面に自動的に分割される
+2台(sp1-2) → spの接続台数に応じてpcの画面に自動的に分割される
 
 ## アプリの実行
 
@@ -19,7 +19,7 @@ or
 $ npm start
 ```
 
-を行ったら
+を行ったら別のターミナルを開いて、
 
 ```
 $ browser-sync start --proxy localhost:4000 --files *
@@ -45,5 +45,48 @@ $ browser-sync start --proxy localhost:4000 --files *
 
 #### 注意2
 
-pc1台(1)とsp2台(2,3)を接続しているときに<br>
-途中のsp(2)をリロード・ブラウザを閉じるとidの振りや大枠のidがおかしくなるので注意！！
+リロードをしたり、途中で切ったりすると接続人数がおかしくなるため注意！！
+
+
+## とりあえずできてること
+
+* index.html
+
+pcのstartボタン押すとpc,sp共にページ遷移する
+
+* page2.html
+
+spの1,2,3,4を押すと値がpcに反映される
+spのstartボタン押すとpc,sp共にページ遷移する
+
+* server.js
+
+mysqlの接続(49-64行)
+
+* create.html,js/sample.js
+
+値を入力するとconsole.logに値を出力
+
+## まだできてない(あとできっと調べる予定)
+
+* js/sample.js,server.js
+
+mysqlの値を使って、create文の発行など
+
+* ????ページ
+
+複数人での処理(現在は1人用)
+※どっちがどっちが今はわからない
+
+* page2.js
+
+ES6に変更
+
+* page2.html,page2.js
+
+formの値を(postで)取得してpage3.htmlに表示
+
+* ????ページ ２つ目
+
+browser-sync startの処理時にページを開いたりすると右上になにかでる
+(browser-syncのアプリケーションの使用??)

@@ -1,3 +1,4 @@
+@import "style.sass"
 @mixin user_wrap_width($class_number)
   .user_wrap
     width: (100%/$class_number)
@@ -5,17 +6,19 @@
   @include user_wrap_width(1)
 .second
   @include user_wrap_width(1)
-#display_wrap
-  width: 100%
-  // height: 100%
-  background: #0f0
+
+#main_wrap
+  .h1_wrap
+    font-size: 8vw
+    padding: 10% 0 0
   .user_wrap
-    // height: 100%
-    display: inline-flex
-    flex-direction: row
-    // background: #00f
-    // &:nth-child(even)
-    //   background: #f0f
-    // &:not(:last-child)
-    //   border-right: 10px solid #000
-    //   box-sizing: border-box
+    font-size: 3vw
+    padding: 4% 0 0
+  .pc_connect
+    @include user_btn()
+//
+// #display_wrap
+//   width: 100%
+//   .user_wrap
+//     display: inline-flex
+//     flex-direction: row
