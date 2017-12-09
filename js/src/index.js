@@ -3,7 +3,7 @@ class App_start extends React.Component{
     return(
       <div>
         <div className="henko">
-          <a className="pc pc_connect" href="page2.html">
+          <a className="connect" href="page2.html">
             START
           </a>
         </div>

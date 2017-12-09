@@ -39,7 +39,7 @@ var Main = React.createClass({
         </div>
         <form action="page3.html" method="post">
           <input type="hidden" name="counter_num" value={this.state.counter} />
-          <button className="sp sp_connect" type="submit" onclick="getData()" name="coutner_btn">
+          <button className="connect" type="submit" onclick="getData()" name="coutner_btn">
             送信
           </button>
         </form>
