@@ -12,18 +12,16 @@ html, body { height: 100%; }
 
 #main_wrap { width: 100%; height: 100%; background: #0ff; position: relative; }
 #main_wrap .test_btn { position: absolute; top: 0; right: 0; }
+#main_wrap .test_btn2 { position: absolute; top: 0; left: 0; }
 
 @media screen and (max-width: 767px) { .sp { display: block !important; }
   .pc { display: none !important; } }
 #display_wrap { width: 100%; height: 100%; margin: auto; }
 
 .char_set { height: 100%; padding: 10%; box-sizing: border-box; }
-.char_set .result_wrap { width: 100%; height: 100%; background: #fff; text-align: center; position: relative; }
-.char_set .result_wrap > div { position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%); box-sizing: border-box; }
-.char_set .btn_wrap button { display: none; }
-
-@media screen and (max-width: 767px) { .char_set .result_wrap { height: 60%; }
-  .char_set .btn_wrap { display: table; margin: 5% auto; }
-  .char_set .btn_wrap button { display: inline-block; margin: 30px 15px; padding: 5px 10px; cursor: pointer; background: #fff; }
-  .char_set .sp_connect { display: block; text-decoration: none; color: #fff; width: 30%; height: 20%; margin: 5% auto 0; padding: 2%; border-radius: 60px; background: #00f; font-size: 3vw; cursor: pointer; box-sizing: border-box; } }
-@media screen and (max-width: 767px) and (max-width: 767px) { .char_set .sp_connect { width: 60%; padding: 5%; } }
+.char_set .result_wrap { width: 100%; height: 60%; background: #fff; text-align: center; position: relative; }
+.char_set .result_wrap > div { display: table; margin: 5% auto; font-size: 10vw; }
+.char_set .btn_wrap { display: table; width: 90%; margin: 5% auto; }
+.char_set .btn_wrap button { display: inline-block; margin: 5% 7% 5% 0; padding: 8%; cursor: pointer; font-size: 4vw; background: #fff; box-sizing: border-box; }
+.char_set .btn_wrap button:last-child { margin: 5% 0; }
+.char_set .connect { display: block; text-decoration: none; color: #fff; width: 60%; height: 20%; margin: 5% auto 0; padding: 5%; border-radius: 100px; background: #00f; font-size: 6vw; cursor: pointer; box-sizing: border-box; }

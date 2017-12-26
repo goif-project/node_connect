@@ -37,9 +37,10 @@ var Main = React.createClass({
           <Button localHandleClick={this.handleClick} increment={3} />
           <Button localHandleClick={this.handleClick} increment={4} />
         </div>
-        <form action="page3.html" method="post">
+        <form action="/page3postPage" method="post">
           <input type="hidden" name="counter_num" value={this.state.counter} />
-          <button className="sp sp_connect" type="submit" onclick="getData()" name="coutner_btn">
+          <input type="hidden" name="link_page" value="page3.html" />
+          <button className="connect" type="submit" onclick="getData()" name="coutner_btn">
             送信
           </button>
         </form>

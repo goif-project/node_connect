@@ -12,6 +12,7 @@ html, body { height: 100%; }
 
 #main_wrap { width: 100%; height: 100%; background: #0ff; position: relative; }
 #main_wrap .test_btn { position: absolute; top: 0; right: 0; }
+#main_wrap .test_btn2 { position: absolute; top: 0; left: 0; }
 
 @media screen and (max-width: 767px) { .sp { display: block !important; }
   .pc { display: none !important; } }
@@ -19,7 +20,6 @@ html, body { height: 100%; }
 
 .second .user_wrap { width: 100%; }
 
-#main_wrap .h1_wrap { font-size: 8vw; padding: 10% 0 0; }
+#main_wrap .h1_wrap { font-size: 10vw; padding: 25% 0; }
 #main_wrap .user_wrap { font-size: 3vw; padding: 4% 0 0; }
-#main_wrap .pc_connect { display: block; text-decoration: none; color: #fff; width: 30%; height: 20%; margin: 5% auto 0; padding: 2%; border-radius: 60px; background: #00f; font-size: 3vw; cursor: pointer; box-sizing: border-box; }
-@media screen and (max-width: 767px) { #main_wrap .pc_connect { width: 60%; padding: 5%; } }
+#main_wrap .connect { display: block; text-decoration: none; color: #fff; width: 60%; height: 20%; margin: 5% auto 0; padding: 5%; border-radius: 100px; background: #00f; font-size: 6vw; cursor: pointer; box-sizing: border-box; }

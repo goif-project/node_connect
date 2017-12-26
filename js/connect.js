@@ -7,12 +7,17 @@ var contents_open = false;
 
 //接続時の処理
 socket.on('count', function(data) {
-    // $count.text(data);
-    display_contents(data);
+    conosle.log("通った");
+});
+
+//接続時の処理
+socket.on('mysql', function(data) {
+  conosle.log("通った");
 });
 
 //切断時の処理
 socket.on('disconnect', function(data){
+  conosle.log("通ったaaaa");
   var data_plus = data + 1;
   if(width >= 768){
     id_name.removeClass(count_arrow[data]);

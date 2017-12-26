@@ -12,6 +12,7 @@ html, body { height: 100%; }
 
 #main_wrap { width: 100%; height: 100%; background: #0ff; position: relative; }
 #main_wrap .test_btn { position: absolute; top: 0; right: 0; }
+#main_wrap .test_btn2 { position: absolute; top: 0; left: 0; }
 
 @media screen and (max-width: 767px) { .sp { display: block !important; }
   .pc { display: none !important; } }
